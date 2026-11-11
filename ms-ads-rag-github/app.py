@@ -25,7 +25,7 @@ except Exception:  # noqa: BLE001  (no secrets file locally is fine)
 from rag import guardrails as G          # noqa: E402
 from rag.chain import RAGChain           # noqa: E402
 
-st.set_page_config(page_title="MS-ADS Assistant", page_icon="🎓", layout="centered")
+st.set_page_config(page_title="MS-ADS Assistant", layout="centered")
 
 SUGGESTED = [
     "What is the tuition for the program?",
@@ -39,11 +39,11 @@ SUGGESTED = [
 ]
 
 FLAG_NOTES = {
-    "pii_redacted": ("🔒", "Personal details in your question were removed before processing."),
-    "regenerated": ("🔁", "The first draft included an unsupported statement, so it was rewritten."),
-    "fallback": ("⚠️", "I couldn't verify an answer from the website, so I'm pointing you to the pages."),
-    "low_relevance": ("❔", "Nothing on the program website matched this closely."),
-    "moderation_flagged": ("🚫", "This request was declined by the content filter."),
+    "pii_redacted": "Personal details in your question were removed before processing.",
+    "regenerated": "The first draft included an unsupported statement, so it was rewritten.",
+    "fallback": "I couldn't verify an answer from the website, so I'm pointing you to the pages.",
+    "low_relevance": "Nothing on the program website matched this closely.",
+    "moderation_flagged": "This request was declined by the content filter.",
 }
 
 
@@ -98,7 +98,7 @@ def render_sources(resp: dict, idx: int, show_debug: bool) -> None:
 
 
 def render_flags(resp: dict) -> None:
-    notes = [f"{icon} {text}" for key, (icon, text) in FLAG_NOTES.items() if resp["flags"].get(key)]
+    notes = [text for key, text in FLAG_NOTES.items() if resp["flags"].get(key)]
     for n in notes:
         st.caption(n)
 
@@ -115,7 +115,7 @@ def render_feedback(resp: dict, idx: int) -> None:
 
 
 def render_message(msg: dict, idx: int, show_debug: bool) -> None:
-    with st.chat_message(msg["role"], avatar="🎓" if msg["role"] == "assistant" else None):
+    with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
         if msg["role"] == "assistant" and "resp" in msg:
             render_flags(msg["resp"])
@@ -146,7 +146,7 @@ def main() -> None:
                    "confirm with the admissions team before making decisions. "
                    "Please don't share personal information.")
 
-    st.title("🎓 MS-ADS Assistant")
+    st.title("MS-ADS Assistant")
     st.caption("Ask about admissions, deadlines, tuition, courses and the in-person and online "
                "programs of UChicago's MS in Applied Data Science.")
 
@@ -170,7 +170,7 @@ def main() -> None:
                if m["role"] == "assistant" and "resp" in m]
     with st.chat_message("user"):
         st.markdown(question)
-    with st.chat_message("assistant", avatar="🎓"):
+    with st.chat_message("assistant"):
         with st.spinner("Searching the program website…"):
             try:
                 resp = bot.answer(question, history).to_dict()
