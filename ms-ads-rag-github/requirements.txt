@@ -1,0 +1,28 @@
+# CPU-only PyTorch (the reranker runs on CPU; avoids multi-GB CUDA wheels on hosting)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+
+# --- Steps 1-2: crawl + clean ---
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0
+
+# --- Steps 3-4: chunk + index ---
+tiktoken>=0.7
+rank_bm25>=0.2.2
+chromadb>=0.5
+langchain-core>=0.3
+langchain-chroma>=0.1
+langchain-openai>=0.2        # EMBEDDING_PROVIDER=openai
+sentence-transformers>=3.0   # EMBEDDING_PROVIDER=hf (local, free)
+python-dotenv>=1.0
+
+# Optional: fallback for JS-rendered pages (pip install playwright && playwright install chromium)
+# playwright>=1.44
+
+# --- Steps 6-8: LLM chain, guardrails, UI ---
+openai>=1.40
+streamlit>=1.46
+
+# --- Step 9: evaluation charts ---
+matplotlib>=3.8

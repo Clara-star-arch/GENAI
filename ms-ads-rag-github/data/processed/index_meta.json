@@ -1,0 +1,7 @@
+{
+  "embedding_provider": "openai",
+  "embedding_model": "text-embedding-3-small",
+  "collection": "msads",
+  "n_chunks": 296,
+  "built_at": "2026-11-05T21:55:07+00:00"
+}

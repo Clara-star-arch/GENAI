@@ -1,0 +1,36 @@
+id,question,Dense only,BM25 only,Hybrid (RRF),Hybrid + rerank,Hybrid + rerank + boost
+q01,What is tuition cost for the program?,1,1,1,1,1
+q02,What scholarships are available for the program?,1,1,1,1,1
+q03,What are the minimum scores for the TOEFL and IELTS English Language Requirement?,1,1,1,1,1
+q04,Is there an application fee waiver?,1,1,1,1,1
+q05,What are the deadlines for the in-person program?,1,1,1,1,1
+q06,How long will it take for me to receive a decision on my application?,1,1,1,1,1
+q07,Can I set up an advising appointment with the enrollment management team?,1,1,1,1,1
+q08,Where can I mail my official transcripts?,1,1,1,1,1
+q09,Does the Master's in Applied Data Science Online program provide visa sponsorship?,2,2,2,2,1
+q10,How do I apply to the MBA/MS program?,1,1,1,1,1
+q11,Is the MS in Applied Data Science program STEM/OPT eligible?,1,1,1,1,1
+q12,How many courses must you complete to earn UChicago's Master's in Applied Data Science?,1,1,1,1,1
+f01,"If I submit my application early, will I get my decision early?",1,1,1,1,1
+f02,How will I be notified if I'm admitted?,1,1,1,1,1
+f03,What should I do after I'm admitted?,1,1,1,1,1
+f04,Do I need to apply separately for scholarships?,2,1,2,1,1
+f05,Is there a thesis option in the program?,1,1,1,1,1
+f06,Can I study part-time in the in-person program?,1,1,1,2,2
+f07,What documents do I need to submit with my application?,3,2,3,4,4
+f08,What is the capstone project?,2,1,1,1,1
+f09,What career support does the program offer?,1,1,1,1,1
+f10,Who teaches in the program?,1,2,1,1,1
+f11,What is the difference between the in-person and online programs?,1,1,1,1,1
+f12,Which English tests does UChicago accept as proof of English proficiency?,1,1,1,1,1
+f13,What courses are in the curriculum?,1,1,1,1,1
+p01,How much does the MS-ADS cost?,4,9,5,4,4
+p02,what english test score do i need,1,1,1,1,1
+p03,Will UChicago sponsor an F-1 visa if I do the online version?,1,1,1,1,1
+p04,Can I work in the US on OPT after graduating?,1,1,1,1,1
+p05,number of classes required to graduate?,1,1,1,1,1
+p06,What's the postal address for sending transcripts?,1,1,1,1,1
+u01,and for the online program?,1,1,1,1,1
+u02,Are there scholarships to help with that?,1,1,1,1,1
+u03,what about IELTS?,1,1,1,1,1
+u04,What about the in-person program?,1,2,1,1,1
